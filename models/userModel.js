@@ -43,6 +43,7 @@ userSchema.methods.sendJWT= async function(req, res, next){
     res.cookie('token', token, {httpOnly:true, sameSite:'Strict'})
  
     return res.json({
+      success:true,
       message: 'token sent sucessfully'
     })
 }

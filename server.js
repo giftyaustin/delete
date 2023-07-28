@@ -13,12 +13,14 @@ const { productRouter } = require("./routers/productRouters/productRouter");
 const { connectProductDB } = require("./database/productDB");
 const { errorHandler } = require("./middlewares/errorHandler");
 const { userRouter } = require("./routers/userRouters/userRouter");
+const { cartRouter } = require("./routers/cartRouter/cartRouter");
 connectProductDB();
 
 
 
 app.use("/",productRouter);
 app.use('/accounts', userRouter )
+app.use('/accounts/cart', cartRouter)
 
 
 
